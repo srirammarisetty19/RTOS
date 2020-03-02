@@ -54,7 +54,6 @@ int main(int argc, char const *argv[])
 	int last_read = 10000;
 
 	// Run forever
-	int ctr = 0;
 	while(1){
 		//printf("hi");
 		uint8_t buf[BUFSIZE];
@@ -66,7 +65,6 @@ int main(int argc, char const *argv[])
 		
 		
 		send(sock , buf, sizeof(buf) , 0 ); 
-		printf("Sent %d\n",ctr++); 
 		
 	}
 	return 0; 
