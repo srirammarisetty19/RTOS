@@ -48,7 +48,6 @@ int main(int argc, char const *argv[])
 	address.sin_port = htons(6000); 									// Port address
 	if (bind(server_fd, (struct sockaddr *)&address,sizeof(address))<0) return -1; 				// Binding
 	if (listen(server_fd, 3) < 0)  return -1; 								// Start listening
-	int ctr = 0;
 	// Run forever
 	while(1){
 		//printf("ggi");
@@ -58,8 +57,6 @@ int main(int argc, char const *argv[])
 					//printf("hhi");
 					uint8_t buffer[BUFSIZE]; 
 					valread = read( new_socket , buffer, sizeof(buffer));
-					printf("Re %s\n", buffer);  
-					printf("Recieved %d\n", ctr++); 
 					
 					
 					if (pa_simple_write(s, buffer, sizeof(buffer), &error) < 0) {
